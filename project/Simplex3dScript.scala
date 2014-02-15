@@ -33,7 +33,7 @@ object Simplex3dScript extends Build {
   lazy val core = Project(
     id = "script",
     base = file("Simplex3dScript"),
-    settings = buildSettings ++ Seq(
+    settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-script",
       description := "Scripting API.",
       target := new File("target/script"),
