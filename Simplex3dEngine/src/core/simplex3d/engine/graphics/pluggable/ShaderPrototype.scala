@@ -199,7 +199,13 @@ object ShaderPrototype {
     
     var min = scala.Int.MaxValue
     for (line <- lines) {
-      val Spaces(s) = line
+	  // not work under windows
+	  //val Spaces(s) = line
+	  val s=line match {
+		case Spaces(s)=>s
+		case a=>"" //TODO: check it; work on moost samples
+	  }
+  
       if (!line.trim.isEmpty && s.length < min) min = s.length
     }
 
